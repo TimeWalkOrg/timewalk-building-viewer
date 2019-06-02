@@ -49,7 +49,8 @@ public class timeWalkController : MonoBehaviour
 
     void Update()
     {
-        if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch))
+        if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch) || Input.GetKeyDown(KeyCode.N))
+        // if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
         {
             SpawnNextObject();
         }

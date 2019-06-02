@@ -52,13 +52,12 @@ public class timeWalkShowObjects : MonoBehaviour
 
     void Update()
     {
-        if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch))
-
-            // Add in test for keyboard press too ("N" for next building?)
+        //if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch))
+        if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
+        // or Input.GetKeyDown(KeyCode.RightArrow)
+        // Add in test for keyboard press too ("N" for next building?)
 
         {
-            // spawn the building prefab at origin position
-            // transform.position = new Vector3(0, 0, 0);
             SpawnNextObject();
         }
     }
