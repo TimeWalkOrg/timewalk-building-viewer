@@ -1,0 +1,224 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &524637140069516737
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7499831198755590825}
+    m_Modifications:
+    - target: {fileID: 1122286600554131136, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_Name
+      value: Credits sign Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -21.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.728365
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6851894
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -3.499
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.31584394
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.007107876
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Bank of Mill Valley</b>
+
+        <size=70%>60 Throckmorton Avenue
+
+        built in 1911, architect: Harvey Klyce
+
+        Currently Bank of America
+
+        </size>
+
+        <size=100%><color=#3999dc>Nathan Schwartzman</color></size>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 127
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 19
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9bc8ff53b4b090d48a40008e2481a4af, type: 3}
+--- !u!1001 &7499831198755981357
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_Name
+      value: bank-of-mill-valley Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b35d6b19beb2d64ba0ced34f1f57176, type: 3}
+--- !u!4 &7499831198755590825 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400004, guid: 3b35d6b19beb2d64ba0ced34f1f57176,
+    type: 3}
+  m_PrefabInstance: {fileID: 7499831198755981357}
+  m_PrefabAsset: {fileID: 0}
