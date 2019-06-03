@@ -11,6 +11,7 @@ public class timeWalkController : MonoBehaviour
     public static int currentObjectIndex = 0;
     public static int objectsListLength = 0;
     public static GameObject currentObject;
+    public static int incrementObject = 0;
 
     public AudioSource audioData;
 
@@ -33,14 +34,20 @@ public class timeWalkController : MonoBehaviour
         // Debug.Log("started");
     }
 
-    void SpawnNextObject()
+    void SpawnNextObject(int incrementNumber)
     {
         Destroy(currentObject);
-        currentObjectIndex++;
-        if (currentObjectIndex == objectsListLength)
+        currentObjectIndex = currentObjectIndex + incrementNumber;
+        if (currentObjectIndex >= objectsListLength)
         {
             currentObjectIndex = 0;
         }
+
+        if (currentObjectIndex < 0)
+        {
+            currentObjectIndex = objectsListLength - 1;
+        }
+
         GameObject myObj = Instantiate(myListObjects[currentObjectIndex]) as GameObject;
         // myObj.transform.position = transform.position; // NO: instead we will use the object's default position
         currentObject = myObj;
@@ -49,10 +56,18 @@ public class timeWalkController : MonoBehaviour
 
     void Update()
     {
+        incrementObject = 0;
         if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch) || Input.GetKeyDown(KeyCode.N))
         // if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
         {
-            SpawnNextObject();
+            incrementObject = 1;
+            SpawnNextObject(incrementObject);
+        }
+        if (OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.RTouch) || Input.GetKeyDown(KeyCode.P))
+        // if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
+        {
+            incrementObject = -1;
+            SpawnNextObject(incrementObject);
         }
     }
 
