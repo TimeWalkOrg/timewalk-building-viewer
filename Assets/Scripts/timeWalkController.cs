@@ -12,6 +12,7 @@ public class timeWalkController : MonoBehaviour
     public static int objectsListLength = 0;
     public static GameObject currentObject;
     public static int incrementObject = 0;
+    public static bool audioPlayingNow = true;
 
     public AudioSource audioData;
 
@@ -64,10 +65,27 @@ public class timeWalkController : MonoBehaviour
             SpawnNextObject(incrementObject);
         }
         if (OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.RTouch) || Input.GetKeyDown(KeyCode.P))
-        // if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
+
         {
             incrementObject = -1;
             SpawnNextObject(incrementObject);
+        }
+
+        // Pause-unpause music
+        if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch) || Input.GetKeyDown(KeyCode.Space))
+
+        {
+            if (audioPlayingNow)
+            {
+                audioData.Pause();
+                audioPlayingNow = false;
+            }
+            else
+            {
+                audioData.UnPause();
+                audioPlayingNow = true;
+            }
+
         }
     }
 
