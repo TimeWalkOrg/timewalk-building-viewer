@@ -6,7 +6,7 @@ SketchUpImporter:
   selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
   assetHash:
     serializedVersion: 2
-    Hash: ed83053db31658ab251592477a45bd33
+    Hash: d691aeb893cd9126e49b84b5b2b553d6
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
@@ -29,6 +29,41 @@ SketchUpImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: YellowWalls
+    second: {fileID: 2100000, guid: 59e378308bda443eea975c5025934845, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Roofing Tile Spanish]'
+    second: {fileID: 2100000, guid: 6fbc9b931316c47a0810f37cd49e5876, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Tile Ceramic Multi]'
+    second: {fileID: 2100000, guid: 60111d43f9f4f471a8cf2110b6ab5942, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Translucent Glass Gray]'
+    second: {fileID: 2100000, guid: 1600ba2d7cc0b49e9bd0869c121f0226, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Wood Veneer 01]'
+    second: {fileID: 2100000, guid: 6b1458037988c4fdda20dba7e253af18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: b0be802082dad4171b247b4912679694, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blackFraming
+    second: {fileID: 2100000, guid: d558eab69748442ad9e310c9901976ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: ceiling
     second: {fileID: 2100000, guid: fcaae07db5c28804eb7950ba4c4d8c08, type: 2}
   - first:
@@ -37,15 +72,70 @@ SketchUpImporter:
       name: floor
     second: {fileID: 2100000, guid: 509ff8502769ab14aaf0ef7ac7f46cf2, type: 2}
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: letters
+    second: {fileID: 2100000, guid: 8ebfb82a332c44adc9c6fac1e1dc898c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: orangeDetails
+    second: {fileID: 2100000, guid: 2a3016efb10724ec5963db7ae6b35323, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: redDetails
+    second: {fileID: 2100000, guid: 130f3f90fa66d4691983fb2ed427a4d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shopWindows
+    second: {fileID: 2100000, guid: a930c06b6d5d345c6b3cada45cf3f137, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls
+    second: {fileID: 2100000, guid: a898b04d7582a41f49994341785e10ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wallsOutdoor
+    second: {fileID: 2100000, guid: 0f1138f940e1f44c48eef26653d71470, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C__Users_VisLab-User-01_Desktop_shopWindows
+    second: {fileID: 2800000, guid: 73f53cc77b4f446b9a8192a4956893aa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: D__Unity-projects_mill-valley buildings prefab creation_Assets_hikers-retreat_Materials_plaster_ultra_fine_spray_diffuse_tint0x441F1CFF
+    second: {fileID: 2800000, guid: ccfd42533d8f64586ac9d01fd3b29ba5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: D__Unity-projects_mill-valley buildings prefab creation_Assets_hikers-retreat_Materials_plaster_ultra_fine_spray_diffuse_tint0x9EB2B2FF
+    second: {fileID: 2800000, guid: 76a6e97bd200b436fb8079c85965cf1a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: D__Unity-projects_mill-valley buildings prefab creation_Assets_hikers-retreat_Materials_plaster_ultra_fine_spray_diffuse_tint0xF9C260FF
+    second: {fileID: 2800000, guid: 41ed25c22d1c94668b230eeecc3c0a59, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: D__Unity-projects_mill-valley buildings prefab creation_Assets_hikers-retreat_Materials_plaster_ultra_fine_spray_diffuse_tint0xFFFDF8FF
+    second: {fileID: 2800000, guid: adb50fd5d6aa0447287f20e3ce8b6a32, type: 3}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Roofing_Tile_Spanish
-    second: {fileID: 2800000, guid: 01d387baa074909479991f2378cc4a70, type: 3}
+    second: {fileID: 2800000, guid: 9c72059ddcf7d4dfaa0625a37165a10d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Tile_Ceramic_Multi
-    second: {fileID: 2800000, guid: da5d5294ef73a4d44892b92250d00d5f, type: 3}
+    second: {fileID: 2800000, guid: 7959844dcfe1c4f3e864bd204976194a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
@@ -55,7 +145,7 @@ SketchUpImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Wood 01
-    second: {fileID: 2800000, guid: 2ac4fdc4e114b7e4eabf64fd3b5c584b, type: 3}
+    second: {fileID: 2800000, guid: 465620310e94e483d969f8a2fe5cb68d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule

@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 71a702927c7057747b09b7d06bfa933d,
         type: 3}
       propertyPath: m_Name
-      value: bank-of-mill-valley Variant
+      value: bank-of-mill-valley 1970 Variant
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 71a702927c7057747b09b7d06bfa933d,
         type: 3}
@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1698165836461320642, guid: 71a702927c7057747b09b7d06bfa933d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fbaf1e2d05c294a09ad03183056c3e72, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71a702927c7057747b09b7d06bfa933d, type: 3}
 --- !u!4 &9182789546891963346 stripped

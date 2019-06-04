@@ -79,7 +79,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: ded8f1c71a372ae42b0d2bba4506c062,
         type: 3}
       propertyPath: m_Name
-      value: train-depot-2019 Variant
+      value: 02 - train-depot-2019 Variant
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ded8f1c71a372ae42b0d2bba4506c062,
         type: 3}
@@ -261,10 +261,18 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1144989423540753842, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+    - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
         type: 3}
-      propertyPath: m_Mesh
-      value: 
+      propertyPath: m_text
+      value: '<b>The Mill Valley Depot</b>
+
+        <size=70%>87 Throckmorton Avenue
+
+        Bus Depot replaced Train Station c.1929
+
+        </size>
+
+        <size=85%><color=#3999dc>Isabel Jasper</color></size>'
       objectReference: {fileID: 0}
     - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
         type: 3}
@@ -285,24 +293,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
-        type: 3}
-      propertyPath: m_text
-      value: '<b>The Mill Valley Depot</b>
-
-        <size=70%>87 Throckmorton Avenue
-
-        Bus Depot replaced Train Station c.1929
-
-        </size>
-
-        <size=85%><color=#3999dc>Isabel Jasper</color></size>'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bc8ff53b4b090d48a40008e2481a4af, type: 3}

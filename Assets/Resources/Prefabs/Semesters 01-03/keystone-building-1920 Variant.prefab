@@ -145,22 +145,22 @@ PrefabInstance:
 
         </size>
 
-        <color=#3999dc>Dylan Garay</color>'
+        <color=#3999dc>Natalie Grove, Dylan Garay</color>'
       objectReference: {fileID: 0}
     - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 108
+      value: 123
       objectReference: {fileID: 0}
     - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bc8ff53b4b090d48a40008e2481a4af, type: 3}

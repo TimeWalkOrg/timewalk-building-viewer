@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.23625106, g: 0.33198732, b: 0.39068866, a: 1}
+  m_IndirectSpecularColor: {r: 0.23639423, g: 0.33208066, b: 0.39080933, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -50,7 +50,7 @@ LightmapSettings:
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
@@ -590,7 +590,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -917,7 +917,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643672401}
   m_LocalRotation: {x: -0, y: -0.030492859, z: -0, w: 0.999535}
-  m_LocalPosition: {x: 0, y: 0, z: -6.29}
+  m_LocalPosition: {x: 0, y: 0, z: -6.194}
   m_LocalScale: {x: 0.17330515, y: 0.17452876, z: 0.0039001256}
   m_Children: []
   m_Father: {fileID: 0}
@@ -925,7 +925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -3.4950001, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.28, y: 0.33}
+  m_AnchoredPosition: {x: 8.851, y: 0.33}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643672407

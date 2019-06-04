@@ -158,7 +158,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100014, guid: 0aecca36fcf2e06479b78871bb26a37f, type: 3}
       propertyPath: m_Name
-      value: depot-train-station-1920
+      value: 01 - depot-train-station-1920 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 100016, guid: 0aecca36fcf2e06479b78871bb26a37f, type: 3}
       propertyPath: m_IsActive
@@ -212,6 +212,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300004, guid: 0aecca36fcf2e06479b78871bb26a37f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 39782e77d11484145ac68ba0c33b799b, type: 2}
+    - target: {fileID: 2300052, guid: 0aecca36fcf2e06479b78871bb26a37f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 407c5f7e7da7849d1bd326bb0521ef7b, type: 2}
+    - target: {fileID: 2300190, guid: 0aecca36fcf2e06479b78871bb26a37f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 80565379767d84860aa36b1d56f6dd02, type: 2}
+    - target: {fileID: 2300192, guid: 0aecca36fcf2e06479b78871bb26a37f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1932df82ac6b45369a5eed6d0c176ad, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aecca36fcf2e06479b78871bb26a37f, type: 3}
 --- !u!4 &5242700151707465602 stripped
