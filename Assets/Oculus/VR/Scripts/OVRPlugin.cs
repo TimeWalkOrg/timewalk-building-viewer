@@ -35,10 +35,12 @@ public static class OVRPlugin
 #if OVRPLUGIN_UNSUPPORTED_PLATFORM
 	public static readonly System.Version wrapperVersion = _versionZero;
 #else
-	public static readonly System.Version wrapperVersion = OVRP_1_31_0.version;
+	public static readonly System.Version wrapperVersion = OVRP_1_37_0.version;
 #endif
 
+#if !OVRPLUGIN_UNSUPPORTED_PLATFORM
 	private static System.Version _version;
+#endif
 	public static System.Version version
 	{
 		get {
@@ -81,7 +83,9 @@ public static class OVRPlugin
 		}
 	}
 
+#if !OVRPLUGIN_UNSUPPORTED_PLATFORM
 	private static System.Version _nativeSDKVersion;
+#endif
 	public static System.Version nativeSDKVersion
 	{
 		get {
@@ -230,6 +234,7 @@ public static class OVRPlugin
 	{
 		EyeLevel       = 0,
 		FloorLevel     = 1,
+		Stage          = 2,
 		Count,
 	}
 
@@ -292,6 +297,8 @@ public static class OVRPlugin
 		Rift_DK1 = 0x1000,
 		Rift_DK2,
 		Rift_CV1,
+		Rift_CB,
+		Rift_S,
 	}
 
 	public enum OverlayShape
@@ -336,23 +343,29 @@ public static class OVRPlugin
 		LMSLow = 1,
 		LMSMedium = 2,
 		LMSHigh = 3,
+		// High foveation setting with more detail toward the bottom of the view and more foveation near the top (Same as High on Oculus Go)
+		LMSHighTop = 4,
 		EnumSize = 0x7FFFFFFF
 	}
 
 	public enum PerfMetrics
 	{
 		App_CpuTime_Float = 0,
-		App_GpuTime_Float,
-		App_MotionToPhotonLatencyTime_Float,
+		App_GpuTime_Float = 1,
 
-		Compositor_CpuTime_Float,
-		Compositor_GpuTime_Float,
-		Compositor_DroppedFrameCount_Int,
-		Compositor_LatencyTime_Float,
+		Compositor_CpuTime_Float = 3,
+		Compositor_GpuTime_Float = 4,
+		Compositor_DroppedFrameCount_Int = 5,
 
-		System_GpuUtilPercentage_Float,
-		System_CpuUtilAveragePercentage_Float,
-		System_CpuUtilWorstPercentage_Float,
+		System_GpuUtilPercentage_Float = 7,
+		System_CpuUtilAveragePercentage_Float = 8,
+		System_CpuUtilWorstPercentage_Float = 9,
+
+		// 1.32.0
+		Device_CpuClockFrequencyInMHz_Float = 10,
+		Device_GpuClockFrequencyInMHz_Float = 11,
+		Device_CpuClockLevel_Int = 12,
+		Device_GpuClockLevel_Int = 13,
 
 		Count,
 		EnumSize = 0x7FFFFFFF
@@ -440,6 +453,21 @@ public static class OVRPlugin
 	}
 
 	[StructLayout(LayoutKind.Sequential)]
+	public struct TextureRectMatrixf
+	{
+		public Rect leftRect;
+		public Rect rightRect;
+		public Vector4 leftScaleBias;
+		public Vector4 rightScaleBias;
+		public static readonly TextureRectMatrixf zero = new TextureRectMatrixf { leftRect = new Rect(0, 0, 1, 1), rightRect = new Rect(0, 0, 1, 1), leftScaleBias = new Vector4(1, 1, 0, 0), rightScaleBias = new Vector4(1, 1, 0, 0) };
+
+		public override string ToString()
+		{
+			return string.Format("Rect Left ({0}), Rect Right({1}), Scale Bias Left ({2}), Scale Bias Right({3})", leftRect, rightRect, leftScaleBias, rightScaleBias);
+		}
+	}
+
+	[StructLayout(LayoutKind.Sequential)]
 	public struct PoseStatef
 	{
 		public Posef Pose;
@@ -447,7 +475,7 @@ public static class OVRPlugin
 		public Vector3f Acceleration;
 		public Vector3f AngularVelocity;
 		public Vector3f AngularAcceleration;
-		double Time;
+		public double Time;
 
 		public static readonly PoseStatef identity = new PoseStatef
 		{
@@ -723,12 +751,6 @@ public static class OVRPlugin
 		public float ClosestDistance;
 		public Vector3f ClosestPoint;
 		public Vector3f ClosestPointNormal;
-	}
-
-	[StructLayout(LayoutKind.Sequential)]
-	public struct BoundaryLookAndFeel
-	{
-		public Colorf Color;
 	}
 
 	[StructLayout(LayoutKind.Sequential)]
@@ -1465,11 +1487,15 @@ public static class OVRPlugin
 #endif
 	}
 
-	public static bool EnqueueSubmitLayer(bool onTop, bool headLocked, bool noDepthBufferTesting, IntPtr leftTexture, IntPtr rightTexture, int layerId, int frameIndex, Posef pose, Vector3f scale, int layerIndex=0, OverlayShape shape=OverlayShape.Quad)
+	public static bool EnqueueSubmitLayer(bool onTop, bool headLocked, bool noDepthBufferTesting, IntPtr leftTexture, IntPtr rightTexture, int layerId, int frameIndex, Posef pose, Vector3f scale, int layerIndex=0, OverlayShape shape=OverlayShape.Quad,
+										bool overrideTextureRectMatrix = false, TextureRectMatrixf textureRectMatrix = default(TextureRectMatrixf), bool overridePerLayerColorScaleAndOffset = false, Vector4 colorScale = default(Vector4), Vector4 colorOffset = default(Vector4))
 	{
 #if OVRPLUGIN_UNSUPPORTED_PLATFORM
 		return false;
 #else
+		if (!initialized)
+			return false;
+
 		if (version >= OVRP_1_6_0.version)
 		{
 			uint flags = (uint)OverlayFlag.None;
@@ -1516,7 +1542,10 @@ public static class OVRPlugin
 				return false;
 			}
 
-			if (version >= OVRP_1_15_0.version && layerId != -1)
+			if (version >= OVRP_1_34_0.version && layerId != -1)
+				return OVRP_1_34_0.ovrp_EnqueueSubmitLayer2(flags, leftTexture, rightTexture, layerId, frameIndex, ref pose, ref scale, layerIndex,
+				overrideTextureRectMatrix ? Bool.True : Bool.False, ref textureRectMatrix, overridePerLayerColorScaleAndOffset ? Bool.True : Bool.False, ref colorScale, ref colorOffset) == Result.Success;
+			else if (version >= OVRP_1_15_0.version && layerId != -1)
 				return OVRP_1_15_0.ovrp_EnqueueSubmitLayer(flags, leftTexture, rightTexture, layerId, frameIndex, ref pose, ref scale, layerIndex) == Result.Success;
 
 			return OVRP_1_6_0.ovrp_SetOverlayQuad3(flags, leftTexture, rightTexture, IntPtr.Zero, pose, scale, layerIndex) == Bool.True;
@@ -1536,6 +1565,8 @@ public static class OVRPlugin
 		return new LayerDesc();
 #else
 		LayerDesc layerDesc = new LayerDesc();
+		if (!initialized)
+			return layerDesc;
 
 		if (version >= OVRP_1_15_0.version)
 		{
@@ -1552,6 +1583,9 @@ public static class OVRPlugin
 #if OVRPLUGIN_UNSUPPORTED_PLATFORM
 		return false;
 #else
+		if (!initialized)
+			return false;
+
 		if (version >= OVRP_1_28_0.version)
 			return OVRP_1_28_0.ovrp_EnqueueSetupLayer2(ref desc, compositionDepth, layerID) == Result.Success;
 		else if (version >= OVRP_1_15_0.version)
@@ -1572,6 +1606,8 @@ public static class OVRPlugin
 #if OVRPLUGIN_UNSUPPORTED_PLATFORM
 		return false;
 #else
+		if (!initialized)
+			return false;
 		if (version >= OVRP_1_15_0.version)
 			return OVRP_1_15_0.ovrp_EnqueueDestroyLayer(layerID) == Result.Success;
 
@@ -1585,6 +1621,8 @@ public static class OVRPlugin
 		return IntPtr.Zero;
 #else
 		IntPtr textureHandle = IntPtr.Zero;
+		if (!initialized)
+			return textureHandle;
 
 		if (version >= OVRP_1_15_0.version)
 			OVRP_1_15_0.ovrp_GetLayerTexturePtr(layerId, stage, eyeId, ref textureHandle);
@@ -1598,6 +1636,9 @@ public static class OVRPlugin
 #if OVRPLUGIN_UNSUPPORTED_PLATFORM
 		return 1;
 #else
+		if (!initialized)
+			return 1;
+
 		int stageCount = 1;
 
 		if (version >= OVRP_1_15_0.version)
@@ -1613,6 +1654,8 @@ public static class OVRPlugin
 		return IntPtr.Zero;
 #else
 		IntPtr surfaceObject = IntPtr.Zero;
+		if (!initialized)
+			return surfaceObject;
 
 		if (version >= OVRP_1_29_0.version)
 			OVRP_1_29_0.ovrp_GetLayerAndroidSurfaceObject(layerId, ref surfaceObject);
@@ -1976,38 +2019,6 @@ public static class OVRPlugin
 		else
 		{
 			return new BoundaryTestResult();
-		}
-#endif
-	}
-
-	public static bool SetBoundaryLookAndFeel(BoundaryLookAndFeel lookAndFeel)
-	{
-#if OVRPLUGIN_UNSUPPORTED_PLATFORM
-		return false;
-#else
-		if (version >= OVRP_1_8_0.version)
-		{
-			return OVRP_1_8_0.ovrp_SetBoundaryLookAndFeel(lookAndFeel) == OVRPlugin.Bool.True;
-		}
-		else
-		{
-			return false;
-		}
-#endif
-	}
-
-	public static bool ResetBoundaryLookAndFeel()
-	{
-#if OVRPLUGIN_UNSUPPORTED_PLATFORM
-		return false;
-#else
-		if (version >= OVRP_1_8_0.version)
-		{
-			return OVRP_1_8_0.ovrp_ResetBoundaryLookAndFeel() == OVRPlugin.Bool.True;
-		}
-		else
-		{
-			return false;
 		}
 #endif
 	}
@@ -2942,14 +2953,14 @@ public static class OVRPlugin
 				if (version >= OVRP_1_21_0.version)
 				{
 					int numFrequencies = 0;
-					Result result = OVRP_1_21_0.ovrp_GetSystemDisplayAvailableFrequencies(IntPtr.Zero, out numFrequencies);
+					Result result = OVRP_1_21_0.ovrp_GetSystemDisplayAvailableFrequencies(IntPtr.Zero, ref numFrequencies);
 					if (result == Result.Success)
 					{
 						if (numFrequencies > 0)
 						{
 							int maxNumElements = numFrequencies;
 							_nativeSystemDisplayFrequenciesAvailable = new OVRNativeBuffer(sizeof(float) * maxNumElements);
-							result = OVRP_1_21_0.ovrp_GetSystemDisplayAvailableFrequencies(_nativeSystemDisplayFrequenciesAvailable.GetPointer(), out numFrequencies);
+							result = OVRP_1_21_0.ovrp_GetSystemDisplayAvailableFrequencies(_nativeSystemDisplayFrequenciesAvailable.GetPointer(), ref numFrequencies);
 							if (result == Result.Success)
 							{
 								int numElementsToCopy = (numFrequencies <= maxNumElements) ? numFrequencies : maxNumElements;
@@ -3302,6 +3313,22 @@ public static class OVRPlugin
 #endif
 	}
 
+	public static bool AddCustomMetadata(string name, string param = "")
+	{
+#if OVRPLUGIN_UNSUPPORTED_PLATFORM
+		return false;
+#else
+		if (version >= OVRP_1_32_0.version)
+		{
+			return OVRP_1_32_0.ovrp_AddCustomMetadata(name, param) == Result.Success;
+		}
+		else
+		{
+			return false;
+		}
+#endif
+	}
+
 	private const string pluginName = "OVRPlugin";
 	private static System.Version _versionZero = new System.Version(0, 0, 0);
 
@@ -3599,12 +3626,6 @@ public static class OVRPlugin
 		public static extern BoundaryTestResult ovrp_TestBoundaryPoint(Vector3f point, BoundaryType boundaryType);
 
 		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern Bool ovrp_SetBoundaryLookAndFeel(BoundaryLookAndFeel lookAndFeel);
-
-		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern Bool ovrp_ResetBoundaryLookAndFeel();
-
-		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern BoundaryGeometry ovrp_GetBoundaryGeometry(BoundaryType boundaryType);
 
 		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
@@ -3860,7 +3881,7 @@ public static class OVRPlugin
 		public static extern Result ovrp_GetSystemDisplayFrequency2(out float systemDisplayFrequency);
 
 		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern Result ovrp_GetSystemDisplayAvailableFrequencies(IntPtr systemDisplayAvailableFrequencies, out int numFrequencies);
+		public static extern Result ovrp_GetSystemDisplayAvailableFrequencies(IntPtr systemDisplayAvailableFrequencies, ref int numFrequencies);
 
 		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern Result ovrp_SetSystemDisplayFrequency(float requestedFrequency);
@@ -3938,6 +3959,39 @@ public static class OVRPlugin
 
 		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern Result ovrp_SetColorScaleAndOffset(Vector4 colorScale, Vector4 colorOffset, Bool applyToAllLayers);
+	}
+
+	private static class OVRP_1_32_0
+	{
+		public static readonly System.Version version = new System.Version(1, 32, 0);
+
+		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
+		public static extern Result ovrp_AddCustomMetadata(string name, string param);
+	}
+
+	private static class OVRP_1_34_0
+	{
+		public static readonly System.Version version = new System.Version(1, 34, 0);
+
+		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
+		public static extern Result ovrp_EnqueueSubmitLayer2(uint flags, IntPtr textureLeft, IntPtr textureRight, int layerId, int frameIndex, ref Posef pose, ref Vector3f scale, int layerIndex,
+		Bool overrideTextureRectMatrix, ref TextureRectMatrixf textureRectMatrix, Bool overridePerLayerColorScaleAndOffset, ref Vector4 colorScale, ref Vector4 colorOffset);
+
+	}
+
+	private static class OVRP_1_35_0
+	{
+		public static readonly System.Version version = new System.Version(1, 35, 0);
+	}
+
+	private static class OVRP_1_36_0
+	{
+		public static readonly System.Version version = new System.Version(1, 36, 0);
+	}
+
+	private static class OVRP_1_37_0
+	{
+		public static readonly System.Version version = new System.Version(1, 37, 0);
 	}
 
 #endif // !OVRPLUGIN_UNSUPPORTED_PLATFORM

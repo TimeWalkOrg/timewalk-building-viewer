@@ -42,6 +42,7 @@ public class OVRManager : MonoBehaviour
 	{
 		EyeLevel   = OVRPlugin.TrackingOrigin.EyeLevel,
 		FloorLevel = OVRPlugin.TrackingOrigin.FloorLevel,
+		Stage = OVRPlugin.TrackingOrigin.Stage,
 	}
 
 	public enum EyeTextureFormat
@@ -57,6 +58,7 @@ public class OVRManager : MonoBehaviour
 		LMSLow = OVRPlugin.TiledMultiResLevel.LMSLow,
 		LMSMedium = OVRPlugin.TiledMultiResLevel.LMSMedium,
 		LMSHigh = OVRPlugin.TiledMultiResLevel.LMSHigh,
+		LMSHighTop = OVRPlugin.TiledMultiResLevel.LMSHighTop,
 	}
 
 	public enum XRDevice
@@ -400,6 +402,12 @@ public class OVRManager : MonoBehaviour
 			_headPoseRelativeOffsetTranslation = value;
 		}
 	}
+
+	/// <summary>
+	/// The TCP listening port of Oculus Profiler Service, which will be activated in Debug/Developerment builds
+	/// When the app is running on editor or device, open "Tools/Oculus/Oculus Profiler Panel" to view the realtime system metrics
+	/// </summary>
+	public int profilerTcpPort = OVRSystemPerfMetrics.TcpListeningPort;
 
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
 	/// <summary>
@@ -1069,6 +1077,9 @@ public class OVRManager : MonoBehaviour
 
 		instance = this;
 
+		// uncomment the following line to disable the callstack printed to log
+		//Application.SetStackTraceLogType(LogType.Log, StackTraceLogType.None);
+
 		Debug.Log("Unity v" + Application.unityVersion + ", " +
 				  "Oculus Utilities v" + OVRPlugin.wrapperVersion + ", " +
 				  "OVRPlugin v" + OVRPlugin.version + ", " +
@@ -1173,6 +1184,21 @@ public class OVRManager : MonoBehaviour
 		if (resetTrackerOnLoad)
 			display.RecenterPose();
 
+		if (Debug.isDebugBuild)
+		{
+			// Activate system metrics collection in Debug/Developerment build
+			if (GetComponent<OVRSystemPerfMetrics.OVRSystemPerfMetricsTcpServer>() == null)
+			{
+				gameObject.AddComponent<OVRSystemPerfMetrics.OVRSystemPerfMetricsTcpServer>();
+			}
+			OVRSystemPerfMetrics.OVRSystemPerfMetricsTcpServer perfTcpServer = GetComponent<OVRSystemPerfMetrics.OVRSystemPerfMetricsTcpServer>();
+			perfTcpServer.listeningPort = profilerTcpPort;
+			if (!perfTcpServer.enabled)
+			{
+				perfTcpServer.enabled = true;
+			}
+		}
+
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
 		// Force OcculusionMesh on all the time, you can change the value to false if you really need it be off for some reasons,
 		// be aware there are performance drops if you don't use occlusionMesh.
@@ -1241,7 +1267,10 @@ public class OVRManager : MonoBehaviour
 		SetCurrentXRDevice();
 
 		if (OVRPlugin.shouldQuit)
+		{
+			Debug.Log("[OVRManager] OVRPlugin.shouldQuit detected");
 			Application.Quit();
+		}
 
 		if (AllowRecenter && OVRPlugin.shouldRecenter)
 		{
@@ -1289,6 +1318,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] HMDLost event");
 				if (HMDLost != null)
 					HMDLost();
 			}
@@ -1302,6 +1332,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] HMDAcquired event");
 				if (HMDAcquired != null)
 					HMDAcquired();
 			}
@@ -1321,6 +1352,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] HMDUnmounted event");
 				if (HMDUnmounted != null)
 					HMDUnmounted();
 			}
@@ -1334,6 +1366,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] HMDMounted event");
 				if (HMDMounted != null)
 					HMDMounted();
 			}
@@ -1353,6 +1386,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] VrFocusLost event");
 				if (VrFocusLost != null)
 					VrFocusLost();
 			}
@@ -1366,6 +1400,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] VrFocusAcquired event");
 				if (VrFocusAcquired != null)
 					VrFocusAcquired();
 			}
@@ -1385,6 +1420,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] InputFocusLost event");
 				if (InputFocusLost != null)
 					InputFocusLost();
 			}
@@ -1398,6 +1434,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] InputFocusAcquired event");
 				if (InputFocusAcquired != null)
 					InputFocusAcquired();
 			}
@@ -1462,6 +1499,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] AudioOutChanged event");
 				if (AudioOutChanged != null)
 					AudioOutChanged();
 			}
@@ -1483,6 +1521,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] AudioInChanged event");
 				if (AudioInChanged != null)
 					AudioInChanged();
 			}
@@ -1500,6 +1539,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] TrackingLost event");
 				if (TrackingLost != null)
 					TrackingLost();
 			}
@@ -1513,6 +1553,7 @@ public class OVRManager : MonoBehaviour
 		{
 			try
 			{
+				Debug.Log("[OVRManager] TrackingAcquired event");
 				if (TrackingAcquired != null)
 					TrackingAcquired();
 			}
@@ -1528,6 +1569,11 @@ public class OVRManager : MonoBehaviour
 		OVRInput.Update();
 
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
+		if (enableMixedReality && !prevEnableMixedReality)
+		{
+			OVRPlugin.SendEvent("mixed_reality_capture", "activated");
+		}
+
 		if (enableMixedReality || prevEnableMixedReality)
 		{
 			Camera mainCamera = FindMainCamera();
@@ -1599,6 +1645,12 @@ public class OVRManager : MonoBehaviour
 
 	private void OnDisable()
 	{
+		OVRSystemPerfMetrics.OVRSystemPerfMetricsTcpServer perfTcpServer = GetComponent<OVRSystemPerfMetrics.OVRSystemPerfMetricsTcpServer>();
+		if (perfTcpServer != null)
+		{
+			perfTcpServer.enabled = false;
+		}
+
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
 		OVRMixedReality.Cleanup();
 #endif
@@ -1614,6 +1666,42 @@ public class OVRManager : MonoBehaviour
 		OVRInput.FixedUpdate();
 	}
 
+	private void OnDestroy()
+	{
+		Debug.Log("[OVRManager] OnDestroy");
+	}
+
+	private void OnApplicationPause(bool pause)
+	{
+		if (pause)
+		{
+			Debug.Log("[OVRManager] OnApplicationPause(true)");
+		}
+		else
+		{
+			Debug.Log("[OVRManager] OnApplicationPause(false)");
+		}
+	}
+
+	private void OnApplicationFocus(bool focus)
+	{
+		if (focus)
+		{
+			Debug.Log("[OVRManager] OnApplicationFocus(true)");
+		}
+		else
+		{
+			Debug.Log("[OVRManager] OnApplicationFocus(false)");
+		}
+	}
+
+	private void OnApplicationQuit()
+	{
+		Debug.Log("[OVRManager] OnApplicationQuit");
+	}
+
+	#endregion // Unity Messages
+
 	/// <summary>
 	/// Leaves the application/game and returns to the launcher/dashboard
 	/// </summary>
@@ -1622,8 +1710,6 @@ public class OVRManager : MonoBehaviour
 		// show the platform UI quit prompt
 		OVRManager.PlatformUIConfirmQuit();
 	}
-
-#endregion
 
 	public static void PlatformUIConfirmQuit()
 	{
