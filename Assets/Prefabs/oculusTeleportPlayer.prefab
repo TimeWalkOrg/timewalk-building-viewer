@@ -29,14 +29,14 @@ RectTransform:
   m_GameObject: {fileID: 1027843542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.001}
-  m_LocalScale: {x: 0.011078134, y: 0.011078134, z: 0.011078134}
+  m_LocalScale: {x: 0.008041174, y: 0.008041174, z: 0.008041174}
   m_Children: []
   m_Father: {fileID: 3304322961492239714}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.267, y: 0.031}
+  m_AnchoredPosition: {x: 0.30404, y: 0.013941}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1027843547
@@ -113,15 +113,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '<b>Controller Instructions</b>
-
-    <size=70%>
-
-    A/B to change building
-
-    Thumbstick: aim and release to teleport
-
-    </size>'
+  m_text: "<b>Controller Instructions</b>\n<size=70%>\nA or B button to change building\nThumbstick:
+    aim and release to teleport\n  <size=50%>(rotate thumbstick to change facing after
+    teleport)\n</size></size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -187,15 +181,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -29.229828, w: -10.128579}
+  m_margin: {x: 0, y: 0, z: -29.229828, w: -12.605106}
   m_textInfo:
     textComponent: {fileID: 1027843544}
-    characterCount: 88
+    characterCount: 152
     spriteCount: 0
-    spaceCount: 13
-    wordCount: 13
+    spaceCount: 25
+    wordCount: 22
     linkCount: 0
-    lineCount: 4
+    lineCount: 5
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -941,7 +935,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3304322961162200529}
-  - {fileID: 3302657795389689972}
+  - {fileID: 3304322960068811582}
   - {fileID: 3304322959801328840}
   - {fileID: 3370579682687088883}
   m_Father: {fileID: 0}
@@ -1573,7 +1567,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4ea5477936f154e49b1330a5c1a1e7b2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b474618c4fc5f54e8a8b803c8352c7d, type: 3}
---- !u!4 &3302657795389689972 stripped
+--- !u!4 &3304322960068811582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000014291504098, guid: 1b474618c4fc5f54e8a8b803c8352c7d,
     type: 3}
