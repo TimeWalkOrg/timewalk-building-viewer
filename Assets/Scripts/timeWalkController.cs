@@ -31,7 +31,7 @@ public class timeWalkController : MonoBehaviour
         currentObject = myObj;
 
         audioData = GetComponent<AudioSource>();
-        audioData.Play(0);
+        // audioData.Play(0);
         // Debug.Log("started");
     }
 
@@ -71,6 +71,11 @@ public class timeWalkController : MonoBehaviour
             SpawnNextObject(incrementObject);
         }
 
+
+    }
+
+    void HideThese()
+    {
         // Pause-unpause music
         if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch) || Input.GetKeyDown(KeyCode.Space))
 
