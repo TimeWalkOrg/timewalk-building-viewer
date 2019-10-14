@@ -51,7 +51,7 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 1
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 12
@@ -223,6 +223,10 @@ PrefabInstance:
     - target: {fileID: 1639215368923378, guid: 534084b03389c8741ad0704cb213552c, type: 3}
       propertyPath: m_Name
       value: FogBlowing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639215368923378, guid: 534084b03389c8741ad0704cb213552c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4781852471261546, guid: 534084b03389c8741ad0704cb213552c, type: 3}
       propertyPath: m_LocalPosition.x
