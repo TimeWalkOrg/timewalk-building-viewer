@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/mainScene.unity
     guid: 243d699b61ace4146a5473af22aad0ff
+  - enabled: 0
+    path: Assets/Scenes/oculusTeleportScene.unity
+    guid: 97db2a7f69092b341aaa46414ee2009f
+  - enabled: 1
+    path: Assets/Scenes/mainScene - testing.unity
+    guid: 341a78f58a329094d8f7b8833f46216d
   m_configObjects: {}
