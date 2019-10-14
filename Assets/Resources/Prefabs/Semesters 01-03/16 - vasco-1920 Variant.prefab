@@ -1,0 +1,214 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4241945873348715344
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_Name
+      value: vasco-1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: de4e40e264f97444e8a2b1907c6d12e5, type: 3}
+--- !u!4 &4241945873348852116 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400068, guid: de4e40e264f97444e8a2b1907c6d12e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 4241945873348715344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5546160340646975408
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4241945873348852116}
+    m_Modifications:
+    - target: {fileID: 4740313969293373312, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_Name
+      value: Credits sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.030529747
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9995339
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -3.499
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6.6600018
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814414528300659048, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636851685938831984, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Allen & Roseveare Grocers<b>
+
+        <size=70%>2 Miller Avenue
+
+        built in 1894
+
+        Vasco Restaurant is now located here
+
+        </size>
+
+        <size=60%><color=#3999dc>Henry Basnight, Nathan Schwartzman, Rowan Olds</color></size>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636851685938831984, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636851685938831984, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636851685938831984, guid: 4deb4911269138f42acd65e834547b35,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 21
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4deb4911269138f42acd65e834547b35, type: 3}

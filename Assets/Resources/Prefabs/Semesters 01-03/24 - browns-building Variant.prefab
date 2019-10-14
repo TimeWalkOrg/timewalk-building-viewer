@@ -1,0 +1,214 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2714308563895389168
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_Name
+      value: browns-building
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5af9ba0d0f733a41807edf745b20afe, type: 3}
+--- !u!4 &2714308563895783794 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: b5af9ba0d0f733a41807edf745b20afe,
+    type: 3}
+  m_PrefabInstance: {fileID: 2714308563895389168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9193307035081213737
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2714308563895783794}
+    m_Modifications:
+    - target: {fileID: 1122286600554131136, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_Name
+      value: Credits sign Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.6900003
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.030529747
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9995339
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -3.499
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.0699997
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 904079236114886696, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Browns Building</b>
+
+        <size=70%>12 Corte Madera Avenue
+
+        built 1929
+
+        Now known as "Mill Creek Plaza"
+
+        </size>
+
+        <color=#3999dc>Connor Ng</color>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009575758130455344, guid: 9bc8ff53b4b090d48a40008e2481a4af,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9bc8ff53b4b090d48a40008e2481a4af, type: 3}
