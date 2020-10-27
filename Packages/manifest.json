@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.normalvr.normcore": "2.0.1",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.ads": "3.4.9",
@@ -14,6 +15,7 @@
     "com.unity.textmeshpro": "3.0.1",
     "com.unity.timeline": "1.2.6",
     "com.unity.ugui": "1.0.0",
+    "com.unity.xr.interaction.toolkit": "0.9.4-preview",
     "com.unity.xr.management": "3.2.16",
     "com.unity.xr.oculus": "1.5.0",
     "com.unity.modules.ai": "1.0.0",
@@ -47,5 +49,15 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "Normal",
+      "url": "https://normcore-registry.normcore.io",
+      "scopes": [
+        "com.normalvr",
+        "io.normcore"
+      ]
+    }
+  ]
 }
