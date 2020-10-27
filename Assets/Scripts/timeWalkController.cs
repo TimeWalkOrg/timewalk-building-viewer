@@ -55,7 +55,9 @@ public class timeWalkController : MonoBehaviour
         // Debug.Log("currentObjectIndex = " + currentObjectIndex);
     }
 
-    void Update()
+
+    // HIDING all Oculus OVR -related stuff to replace with XR Plugin
+/*    void Update()
     {
         incrementObject = 0;
         if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch) || Input.GetKeyDown(KeyCode.N))
@@ -92,6 +94,6 @@ public class timeWalkController : MonoBehaviour
             }
 
         }
-    }
+    }*/
 
 }
