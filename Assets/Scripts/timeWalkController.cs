@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class timeWalkController : MonoBehaviour
 {
@@ -15,9 +17,17 @@ public class timeWalkController : MonoBehaviour
     public static bool audioPlayingNow = true;
 
     public AudioSource audioData;
+    private List<InputDevice> devices = new List<InputDevice>();
+
+    [SerializeField]
+    private XRNode controllerNode = XRNode.RightHand;
+    private InputDevice controller;
+    private bool buttonPressed;
+    private bool buttonReleased = true;
 
     void Start()
     {
+        GetDevice();
         // NOTE: make sure all building prefabs are inside this folder: "Assets/Resources/Prefabs"
 
         Object[] subListObjects = Resources.LoadAll("Prefabs", typeof(GameObject));
@@ -33,6 +43,14 @@ public class timeWalkController : MonoBehaviour
         audioData = GetComponent<AudioSource>();
         // audioData.Play(0);
         // Debug.Log("started");
+        buttonReleased = true;
+
+    }
+
+    private void GetDevice()
+    {
+        InputDevices.GetDevicesAtXRNode(controllerNode, devices);
+        controller = devices.FirstOrDefault();
     }
 
     void SpawnNextObject(int incrementNumber)
@@ -54,46 +72,67 @@ public class timeWalkController : MonoBehaviour
         currentObject = myObj;
         // Debug.Log("currentObjectIndex = " + currentObjectIndex);
     }
-
-
-    // HIDING all Oculus OVR -related stuff to replace with XR Plugin
-/*    void Update()
+  
+    void Update()
     {
         incrementObject = 0;
-        if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch) || Input.GetKeyDown(KeyCode.N))
-        // if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
-        {
-            incrementObject = 1;
-            SpawnNextObject(incrementObject);
-        }
-        if (OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.RTouch) || Input.GetKeyDown(KeyCode.P))
 
+        bool buttonValue;
+        if (buttonReleased)
         {
-            incrementObject = -1;
-            SpawnNextObject(incrementObject);
+            if (controller.TryGetFeatureValue(CommonUsages.primaryButton, out buttonValue) && buttonValue)
+            {
+                incrementObject = 1;
+                SpawnNextObject(incrementObject);
+                buttonReleased = false;
+            }
+        } 
+            if (!(controller.TryGetFeatureValue(CommonUsages.primaryButton, out buttonValue) && buttonValue))
+        {
+            buttonReleased = true;
         }
 
 
     }
 
-    void HideThese()
-    {
-        // Pause-unpause music
-        if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch) || Input.GetKeyDown(KeyCode.Space))
-
-        {
-            if (audioPlayingNow)
+        // HIDING all Oculus OVR -related stuff to replace with XR Plugin
+        /*    void Update()
             {
-                audioData.Pause();
-                audioPlayingNow = false;
+                incrementObject = 0;
+                if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch) || Input.GetKeyDown(KeyCode.N))
+                // if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
+                {
+                    incrementObject = 1;
+                    SpawnNextObject(incrementObject);
+                }
+                if (OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.RTouch) || Input.GetKeyDown(KeyCode.P))
+
+                {
+                    incrementObject = -1;
+                    SpawnNextObject(incrementObject);
+                }
+
+
             }
-            else
+
+            void HideThese()
             {
-                audioData.UnPause();
-                audioPlayingNow = true;
-            }
+                // Pause-unpause music
+                if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch) || Input.GetKeyDown(KeyCode.Space))
 
-        }
-    }*/
+                {
+                    if (audioPlayingNow)
+                    {
+                        audioData.Pause();
+                        audioPlayingNow = false;
+                    }
+                    else
+                    {
+                        audioData.UnPause();
+                        audioPlayingNow = true;
+                    }
 
-}
+                }
+            }*/
+
+    }
